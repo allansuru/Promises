@@ -16,10 +16,12 @@
     try {
    const customer = await getCustomer(1);
    console.log('Customer: ', customer.name);
-   const movies = await getTopMovies();
-   console.log('Movies: ', movies);
-   const email = await sendEmail(customer.email, movies);
-   console.log(email);
+   if (customer.isGold) { 
+    const movies = await getTopMovies();
+    console.log('Movies: ', movies);
+    const email = await sendEmail(customer.email, movies);
+    console.log(email);
+   }
     } catch(err) {
         console.log('Erro:' , err.message);
     }
