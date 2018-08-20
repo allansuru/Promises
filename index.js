@@ -28,7 +28,7 @@ getUser(1)
                 const commit = await getCommits(repo[0]);
                 console.log(commit);
          } catch(err) {
-                console.log('Algo deu errado: ', err);
+                console.log('Algo deu errado: ', err.message);
          }
  
       
